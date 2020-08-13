@@ -36,16 +36,7 @@ export class AppComponent implements OnInit {
 
     if (this.cdTime.stopTime - ts < 0) {
       this.countDownIsVisible = false;
-      var fileToLoad = await this.getRandomFilePath();
-
-      this.fileSource = "assets/files/" + fileToLoad[1];
-
-      if (fileToLoad[0] === "video") {
-        this.fileIsVideo = true;
-      }
-      else {
-        this.fileIsVideo = false;
-      }
+      await this.loadRandomFile();
 
     }
 
@@ -74,6 +65,19 @@ export class AppComponent implements OnInit {
 
   }
 
+  private async loadRandomFile() {
+    var fileToLoad = await this.getRandomFilePath();
+
+
+    this.fileSource = "assets/files/" + fileToLoad[1];
+
+    if (fileToLoad[0] === "video") {
+      this.fileIsVideo = true;
+    }
+    else {
+      this.fileIsVideo = false;
+    }
+  }
   //dir /b > files.txt 
 
 
