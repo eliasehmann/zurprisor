@@ -1,16 +1,43 @@
 .countdown{
-    font-size: 100px;
+    font-size: 60px;
     color: #fff;
 }
 
-.h-100{
+
+
+body {
+    background-color: #333;
+}
+
+.appview{
     position:absolute;
     top:0px;
     bottom:0px;
     left:0px;
     right:0px;
+    background-color: green;
 }
 
-body {
-    background-color: #333;
+
+img{
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+video {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
   }
+  
