@@ -18,8 +18,8 @@ export class AppComponent implements OnInit {
 
   public cdTime =
     {
-      "stopTime": 1598104800,
-      //"stopTime": 1597322271,
+      //"stopTime": 1598104800,
+      "stopTime": 1597322271,
       "format": 'dd:HH:mm:ss',
 
     };

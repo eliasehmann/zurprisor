@@ -3,41 +3,36 @@
     color: #fff;
 }
 
-
-
 body {
     background-color: #333;
 }
 
 .appview{
-    position:absolute;
-    top:0px;
-    bottom:0px;
-    left:0px;
-    right:0px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     background-color: green;
 }
 
-
-img{
-    padding: 0;
-    display: block;
-    margin: 0 auto;
-    max-height: 100%;
-    max-width: 100%;
-}
-
-video {
-    padding: 0;
-    display: block;
-    margin: 0 auto;
-    max-height: 100%;
-    max-width: 100%;
-
-}
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
   }
   
+  img{
+      max-height: 90% !important;
+      margin: auto;
+      display: block;
+    }
+  
+  video{
+    max-height: 90% !important;
+    margin: auto;
+    display: block;
+    }
+
+    .content-view{
+        display: unset;
+    }
+

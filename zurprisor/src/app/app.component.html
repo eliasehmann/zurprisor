@@ -1,18 +1,15 @@
-<div class="appview">
-    <div class="container h-100" *ngIf="countDownIsVisible">
+<div class="appview" *ngIf="countDownIsVisible">
+    <div class="container h-100">
         <div class="row h-100 justify-content-center align-items-center">
             <div class="countdown">
                 <countdown [config]="cdTime"></countdown>
             </div>
         </div>
     </div>
+</div>
 
-
-    <div *ngIf="!countDownIsVisible&&fileIsVideo">
-        <video src="{{fileSource}}" class="rounded mx-auto d-block" autoplay="true" loop="true"></video>
-    </div>
-    <div *ngIf="!countDownIsVisible&&!fileIsVideo">
-        <img src="{{fileSource}}" class="rounded mx-auto d-block">
-    </div>
+<div class="content-view container h-100">
+    <video *ngIf="!countDownIsVisible&&fileIsVideo" src="{{fileSource}}" autoplay="true" loop="true"></video>
+    <img *ngIf="!countDownIsVisible&&!fileIsVideo" src="{{fileSource}}">
 
 </div>
