@@ -8,8 +8,8 @@
     </div>
 </div>
 
-<div class="content-view container h-100">
-    <video *ngIf="!countDownIsVisible&&fileIsVideo" src="{{fileSource}}" autoplay="true" loop="true"></video>
+<div class="content-view container h-100" *ngIf="!countDownIsVisible">
+    <video *ngIf=" !countDownIsVisible&&fileIsVideo" src="{{fileSource}}" autoplay="true" loop="true"></video>
     <img *ngIf="!countDownIsVisible&&!fileIsVideo" src="{{fileSource}}">
 
 </div>
