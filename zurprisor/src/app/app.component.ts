@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
       console.log("Video");
       return ["video", file];
     }
-    if (file.includes("jpg")) {
+    if (file.includes("jpg") || file.includes("JPG")) {
       console.log("Image");
       return ["image", file];
     }
