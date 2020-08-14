@@ -18,10 +18,9 @@ export class AppComponent implements OnInit {
 
   public cdTime =
     {
-      //"stopTime": 1598106240,
-      "stopTime": 1597322271,
-      "format": 'dd:HH:mm',
-
+      "stopTime": 1598106240,
+      //"stopTime": 1597322271,
+      //"format": 'dd:HH:mm',
     };
 
   public countDownIsVisible: boolean;
@@ -56,7 +55,7 @@ export class AppComponent implements OnInit {
       console.log("Video");
       return ["video", file];
     }
-    if (file.includes("jpg") || file.includes("JPG")) {
+    if (file.includes("jpg") || file.includes("JPG") || file.includes("jpeg")) {
       console.log("Image");
       return ["image", file];
     }
