@@ -2,7 +2,30 @@
     <div class="container h-100">
         <div class="row h-100 justify-content-center align-items-center">
             <div class="countdown">
-                <countdown [config]="cdTime"></countdown>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <countdown [config]="{stopTime: 1598106240,format: 'dd'}"></countdown>
+                    </div>
+                    <div class="col-xs-6" style="padding-left: 15px;">
+                        <p>Tage</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <countdown [config]="{stopTime: 1598106240,format: 'HH'}"></countdown>
+                    </div>
+                    <div class="col-xs-6" style="padding-left: 15px;">
+                        <p>Stunden</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <countdown [config]="{stopTime: 1598106240,format: 'mm'}"></countdown>
+                    </div>
+                    <div class="col-xs-6" style="padding-left: 15px;">
+                        <p>Minuten</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
 
   title = 'zurprisor';
 
-  public cdTime =
+  public originalCountDownConfig =
     {
       "stopTime": 1598106240,
       //"stopTime": 1597322271,
@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
 
     var ts = Math.round((new Date()).getTime() / 1000);
 
-    if (this.cdTime.stopTime - ts < 0) {
+    if (this.originalCountDownConfig.stopTime - ts < 0) {
       this.countDownIsVisible = false;
       await this.loadRandomFile();
 

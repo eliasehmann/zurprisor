@@ -23,15 +23,19 @@ html, body {
       max-height: 90% !important;
       margin: auto;
       display: block;
+      padding-top: 20px;
+
     }
   
   video{
     max-height: 90% !important;
     margin: auto;
     display: block;
+    padding-top: 20px;
     }
 
     .content-view{
         display: unset;
+
     }
 
