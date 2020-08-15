@@ -32,6 +32,7 @@
 </div>
 
 <div class="content-view" *ngIf="!countDownIsVisible">
+    <h4 style="color: white;text-align: center;padding-top: 15px;">{{fileComment}}</h4>
     <video *ngIf=" !countDownIsVisible&&fileIsVideo" src="{{fileSource}}" autoplay="true" loop="true" playsinline
         controls></video>
     <img *ngIf="!countDownIsVisible&&!fileIsVideo" src="{{fileSource}}">

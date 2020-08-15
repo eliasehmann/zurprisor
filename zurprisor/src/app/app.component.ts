@@ -18,8 +18,8 @@ export class AppComponent implements OnInit {
 
   public originalCountDownConfig =
     {
-      "stopTime": 1598106240,
-      //"stopTime": 1597322271,
+      //"stopTime": 1598106240,
+      "stopTime": 1597322271,
       //"format": 'dd:HH:mm',
     };
 
@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
 
   public fileIsVideo: boolean;
   public fileSource: string;
+  public fileComment: string;
 
   async ngOnInit() {
     this.countDownIsVisible = true;
@@ -41,24 +42,38 @@ export class AppComponent implements OnInit {
 
   }
 
-  private async getRandomFilePath(): Promise<[string, string]> {
-    const result = await this.http.get('assets/files/txt/files.txt', { responseType: 'text' }).toPromise();
+  private async getRandomFilePath(): Promise<[string, string, string]> {
+    const resultFiles = await this.http.get('assets/files/txt/files.txt', { responseType: 'text' }).toPromise();
+    const resultComments = await this.http.get('assets/files/txt/files_comments.txt', { responseType: 'text' }).toPromise();
 
-    var files: string[] = result.split("\n");
+    var files: string[] = resultFiles.split("\n");
+    var comments: string[] = resultComments.split("\n")
 
     const random = Math.floor(Math.random() * files.length);
-    console.log(files[random]);
-
     var file: string = files[random];
+
+    var comment = "";
+    console.log(file);
+
+    for (var index in comments) {
+      console.log(comments[index]);
+
+      if (comments[index].includes(file.split(".")[0])) {
+        comment = comments[index].split('|')[1];
+      }
+
+    }
 
     if (file.includes("mp4")) {
       console.log("Video");
-      return ["video", file];
+      return ["video", file, comment];
     }
     if (file.includes("jpg") || file.includes("JPG") || file.includes("jpeg")) {
       console.log("Image");
-      return ["image", file];
+      return ["image", file, comment];
     }
+
+
 
 
 
@@ -69,6 +84,7 @@ export class AppComponent implements OnInit {
 
 
     this.fileSource = "assets/files/" + fileToLoad[1];
+    this.fileComment = fileToLoad[2];
 
     if (fileToLoad[0] === "video") {
       this.fileIsVideo = true;
